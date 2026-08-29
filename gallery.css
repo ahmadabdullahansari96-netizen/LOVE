@@ -1,0 +1,814 @@
+/* =========================================
+   GOOGLE FONTS
+========================================= */
+
+:root {
+    --pink: #ff4f81;
+    --dark-pink: #d6336c;
+    --light-pink: #fff0f5;
+    --soft-pink: #ffe1eb;
+    --white: #ffffff;
+    --dark: #24151b;
+    --gray: #755d65;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8fa;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   COMMON
+========================================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+.small-text {
+    color: var(--pink);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe0ea,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffd5e3,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe9f0
+        );
+}
+
+
+/* Decorative hearts */
+
+.hero::before {
+    content: "♥";
+
+    position: absolute;
+
+    top: 10%;
+    left: 8%;
+
+    color: rgba(255, 79, 129, 0.12);
+
+    font-size: 130px;
+
+    animation: floatHeart 5s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "♥";
+
+    position: absolute;
+
+    bottom: 8%;
+    right: 8%;
+
+    color: rgba(255, 79, 129, 0.12);
+
+    font-size: 160px;
+
+    animation: floatHeart 6s ease-in-out infinite reverse;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding: 30px;
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(4rem, 10vw, 7rem);
+
+    font-weight: 400;
+
+    color: var(--dark-pink);
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+
+.hero-message {
+    max-width: 580px;
+
+    margin: 0 auto 35px;
+
+    color: var(--gray);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.view-btn {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--dark-pink)
+        );
+
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 10px 25px rgba(214, 51, 108, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.view-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(214, 51, 108, 0.35);
+}
+
+
+/* =========================================
+   LOVE INTRO SECTION
+========================================= */
+
+.love-section {
+    padding: 100px 0 70px;
+
+    text-align: center;
+}
+
+.love-section .container {
+    max-width: 700px;
+}
+
+
+.heart {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 2.5rem;
+
+    margin-bottom: 10px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.love-section h2,
+.section-heading h2,
+.message-card h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+
+    font-weight: 400;
+
+    color: var(--dark-pink);
+}
+
+
+.love-section p {
+    color: var(--gray);
+
+    line-height: 1.9;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   LOVE CARDS SECTION
+========================================= */
+
+.gallery-section {
+    padding: 60px 0 100px;
+}
+
+
+/* Section heading */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   CARDS CONTAINER
+========================================= */
+
+.love-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   LOVE CARD
+========================================= */
+
+.love-card {
+    position: relative;
+
+    padding: 45px 30px 40px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(255, 246, 249, 0.95)
+        );
+
+    border: 1px solid rgba(255, 79, 129, 0.12);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(80, 20, 40, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Decorative circle */
+
+.love-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 79, 129, 0.07);
+
+    top: -70px;
+    right: -60px;
+}
+
+
+/* Second decorative circle */
+
+.love-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 79, 129, 0.05);
+
+    bottom: -30px;
+    left: -25px;
+}
+
+
+/* Card hover */
+
+.love-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(214, 51, 108, 0.15);
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe0ea
+        );
+
+    font-size: 2rem;
+
+    box-shadow:
+        0 8px 20px rgba(214, 51, 108, 0.10);
+
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.love-card h3 {
+    position: relative;
+    z-index: 2;
+
+    color: var(--dark-pink);
+
+    font-size: 1.25rem;
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.love-card p {
+    position: relative;
+    z-index: 2;
+
+    color: var(--gray);
+
+    font-size: 0.9rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.card-number {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: rgba(214, 51, 108, 0.25);
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   MESSAGE SECTION
+========================================= */
+
+.message-section {
+    padding: 80px 0 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe5ee
+        );
+}
+
+
+.message-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    padding: 60px 40px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(214, 51, 108, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+.message-heart {
+    font-size: 2rem;
+
+    display: inline-block;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.message-card h2 {
+    margin: 10px 0 20px;
+}
+
+
+.message-card > p {
+    color: var(--gray);
+
+    line-height: 1.9;
+}
+
+
+.signature {
+    margin-top: 30px;
+
+    font-size: 0.95rem;
+}
+
+
+.signature span {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: var(--dark-pink);
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 2rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #24151b;
+
+    color: #d9c2c9;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   FLOATING HEART ANIMATION
+========================================= */
+
+@keyframes floatHeart {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+    }
+}
+
+
+/* =========================================
+   HEARTBEAT
+========================================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================
+   CARD ICON PULSE
+========================================= */
+
+@keyframes softPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .love-cards {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 22px;
+    }
+
+    .love-card {
+        padding: 45px 35px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-message {
+        font-size: 0.9rem;
+
+        line-height: 1.8;
+
+        margin-bottom: 30px;
+    }
+
+    .view-btn {
+        padding: 13px 24px;
+    }
+
+
+    /* Decorative hearts */
+
+    .hero::before {
+        font-size: 80px;
+
+        top: 8%;
+        left: 2%;
+    }
+
+    .hero::after {
+        font-size: 100px;
+
+        bottom: 7%;
+        right: 2%;
+    }
+
+
+    /* Love section */
+
+    .love-section {
+        padding: 70px 0 45px;
+    }
+
+
+    /* Cards section */
+
+    .gallery-section {
+        padding: 45px 0 75px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+
+    /* Cards */
+
+    .love-cards {
+        gap: 18px;
+    }
+
+    .love-card {
+        padding: 38px 24px;
+
+        border-radius: 20px;
+    }
+
+    .love-card:hover {
+        transform: translateY(-5px);
+    }
+
+
+    /* Icon */
+
+    .card-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 1.7rem;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* Card title */
+
+    .love-card h3 {
+        font-size: 1.15rem;
+    }
+
+
+    /* Card text */
+
+    .love-card p {
+        font-size: 0.85rem;
+
+        line-height: 1.85;
+    }
+
+
+    /* Message */
+
+    .message-section {
+        padding: 60px 0 70px;
+    }
+
+    .message-card {
+        padding: 45px 25px;
+
+        border-radius: 22px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        font-size: 0.7rem;
+
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .hero-message {
+        font-size: 0.82rem;
+    }
+
+    .love-card {
+        padding: 32px 20px;
+    }
+
+    .love-card p {
+        font-size: 0.82rem;
+    }
+
+}

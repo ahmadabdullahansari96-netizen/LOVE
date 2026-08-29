@@ -1,0 +1,345 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    /*
+       Same soft romantic background
+       jo hero section mein tha
+    */
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe0ea,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffd5e3,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe9f0
+        );
+}
+
+
+/* =========================================
+   SMALL DECORATIVE HEARTS
+========================================= */
+
+/* Left top heart */
+
+body::before {
+    content: "♥";
+
+    position: fixed;
+
+    top: 10%;
+    left: 8%;
+
+    color: rgba(255, 79, 129, 0.14);
+
+    font-size: 100px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatHeart 5s ease-in-out infinite;
+}
+
+
+/* Right bottom heart */
+
+body::after {
+    content: "♥";
+
+    position: fixed;
+
+    bottom: 8%;
+    right: 8%;
+
+    color: rgba(255, 79, 129, 0.14);
+
+    font-size: 130px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatHeartReverse 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.card {
+    width: 90%;
+    max-width: 500px;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+#mainImage {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 15px;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+h1 {
+    font-size: 25px;
+
+    color: #222;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+#subtitle {
+    font-size: 14px;
+
+    color: #555;
+
+    margin-bottom: 20px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BUTTONS CONTAINER
+========================================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+    border: none;
+
+    background: white;
+
+    color: #333;
+
+    padding: 9px 20px;
+
+    min-width: 55px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+#yesBtn {
+    z-index: 10;
+
+    transition: all 0.3s ease;
+
+    padding: 10px 20px;
+}
+
+
+/* =========================================
+   NO BUTTON
+========================================= */
+
+#noBtn {
+    transition: all 0.3s ease;
+
+    padding: 10px 20px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    width: 100%;
+
+    margin-top: auto;
+
+    background: rgba(255, 225, 230, 0.45);
+
+    color: black;
+
+    text-align: center;
+
+    padding: 15px;
+
+    position: relative;
+
+    z-index: 2;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   FLOATING HEART ANIMATION
+========================================= */
+
+@keyframes floatHeart {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+    }
+}
+
+
+@keyframes floatHeartReverse {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(10deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(-10deg);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    #mainImage {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #subtitle {
+        font-size: 13px;
+    }
+
+
+    /* Smaller hearts on mobile */
+
+    body::before {
+        top: 8%;
+        left: 2%;
+
+        font-size: 65px;
+    }
+
+    body::after {
+        bottom: 8%;
+        right: 2%;
+
+        font-size: 80px;
+    }
+}
