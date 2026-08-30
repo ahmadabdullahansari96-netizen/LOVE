@@ -24,13 +24,18 @@ body {
 
     position: relative;
 
-    overflow: hidden;
+    /*
+       IMPORTANT:
+       Horizontal overflow hide rahega,
+       lekin vertical scrolling allowed hogi.
+    */
+    overflow-x: hidden;
+    overflow-y: auto;
 
     font-family: Arial, sans-serif;
 
     /*
        Same soft romantic background
-       jo hero section mein tha
     */
     background:
         radial-gradient(
@@ -114,6 +119,12 @@ body::after {
     position: relative;
 
     z-index: 2;
+
+    /*
+       Prevent card from becoming too large
+       on small screens.
+    */
+    flex-shrink: 0;
 }
 
 
@@ -251,6 +262,10 @@ button:active {
 .footer {
     width: 100%;
 
+    /*
+       Desktop aur normal screen par
+       footer ko neeche push karega.
+    */
     margin-top: auto;
 
     background: rgba(255, 225, 230, 0.45);
@@ -266,6 +281,11 @@ button:active {
     z-index: 2;
 
     backdrop-filter: blur(5px);
+
+    /*
+       Footer shrink nahi hoga.
+    */
+    flex-shrink: 0;
 }
 
 
@@ -311,23 +331,52 @@ button:active {
    MOBILE
 ========================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
+
+    /*
+       Mobile par card ki vertical spacing
+       thori kam kar di.
+    */
+    .card {
+        padding: 20px 15px;
+    }
+
 
     #mainImage {
         width: 130px;
         height: 130px;
+
+        margin-bottom: 10px;
     }
+
 
     h1 {
         font-size: 22px;
+
+        margin-bottom: 10px;
     }
+
 
     #subtitle {
         font-size: 13px;
+
+        margin-bottom: 16px;
     }
 
 
-    /* Smaller hearts on mobile */
+    .buttons {
+        gap: 15px;
+    }
+
+
+    button {
+        padding: 8px 16px;
+    }
+
+
+    /*
+       Smaller hearts on mobile
+    */
 
     body::before {
         top: 8%;
@@ -336,10 +385,23 @@ button:active {
         font-size: 65px;
     }
 
+
     body::after {
         bottom: 8%;
         right: 2%;
 
         font-size: 80px;
     }
+
+
+    /*
+       Footer mobile par bhi properly visible rahega.
+    */
+
+    .footer {
+        padding: 12px 10px;
+
+        font-size: 13px;
+    }
 }
+
