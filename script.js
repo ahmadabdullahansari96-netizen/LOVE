@@ -8,7 +8,7 @@ const noBtn = document.getElementById("noBtn");
 const stages = [
     // STAGE 0
     {
-        image: "images/cat0.gif",
+        image: "cat0.gif",
         question: "Lets Start Janawww",
         subtitle: "Please click on Yes"
     },
