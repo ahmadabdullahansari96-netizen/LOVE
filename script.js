@@ -17,7 +17,7 @@ subtitle: "Please click on Yes"
 {
     image: "cat1.gif",
     question: "DO you love me? 🥺",
-    subtitle: "Ahmad is all yours I love You Mama"
+    subtitle: "Ahmad is all yours"
 },
 
 // STAGE 2
